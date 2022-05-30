@@ -1,5 +1,5 @@
 {% set name = "traviscli" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/traviscli-{{ version }}.tar.gz
-  sha256: b93a5e7803874e0a963b8b7b085b54dcd6a826b6662732f8dff5c3b7b0b29c17
+  sha256: c2236da8bdba857b7db3375c00512694dfb5e71f83c659ec78f7d9c3add09b6a
 
 build:
   number: 0
