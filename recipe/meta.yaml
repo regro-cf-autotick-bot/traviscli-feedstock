@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/traviscli-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/traviscli-{{ version }}.tar.gz
   sha256: c2236da8bdba857b7db3375c00512694dfb5e71f83c659ec78f7d9c3add09b6a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - click
-    - python >=3.6
+    - python >={{ python_min }}
     - pytravisci
 
 test:
@@ -35,6 +35,7 @@ test:
     - traviscli --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/hasii2011/travisci-cli
